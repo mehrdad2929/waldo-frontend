@@ -32,6 +32,163 @@ body {
   text-align: center;
 }
 
+.menu-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.menu-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .menu-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+  
+  .menu-header h1 {
+    margin-bottom: 0;
+  }
+}
+
+.score-submitted {
+  color: #22c55e;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.level-card {
+  background: #333;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 3px solid transparent;
+}
+
+.level-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-color: #22c55e;
+}
+
+.level-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.level-name {
+  display: block;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.back-btn {
+  padding: 0.5rem 1rem;
+  background: #555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.back-btn:hover {
+  background: #666;
+}
+
+.pre-game-screen {
+  padding: 3rem 2rem;
+}
+
+.pre-game-screen h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.instructions {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+.character-preview {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.preview-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.preview-image {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 3px solid #555;
+  background: #333;
+}
+
+.preview-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.start-btn {
+  padding: 1rem 3rem;
+  font-size: 1.3rem;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  margin-top: 2rem;
+}
+
+.start-btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.timer-display {
+  font-size: 1.5rem;
+  font-family: monospace;
+  font-weight: bold;
+  color: #fbbf24;
+}
+
 .character-list {
   display: flex;
   justify-content: center;
@@ -44,6 +201,17 @@ body {
   padding: 0.5rem 1rem;
   background: #444;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.character-list-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #333;
 }
 
 .character-item.found {
@@ -185,6 +353,246 @@ body {
   color: #22c55e;
   font-weight: bold;
   background: rgba(34, 197, 94, 0.1);
+}
+
+/* Auth Pages */
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  background: #333;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+.auth-card h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: #222;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #22c55e;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  background: #16a34a;
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 1rem;
+  color: #aaa;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #22c55e;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  background: #dc2626;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.success-message {
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-message h2 {
+  color: #22c55e;
+  margin-bottom: 0.5rem;
+}
+
+/* Leaderboard Page */
+.leaderboard-page {
+  padding: 2rem;
+}
+
+.leaderboard-page h1 {
+  margin-bottom: 1.5rem;
+}
+
+.level-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.level-tab {
+  padding: 0.5rem 1rem;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.level-tab:hover {
+  background: #555;
+}
+
+.level-tab.active {
+  background: #22c55e;
+}
+
+.leaderboard-table {
+  background: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.leaderboard-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px;
+  padding: 1rem;
+  background: #222;
+  font-weight: 600;
+  border-bottom: 1px solid #444;
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #444;
+  align-items: center;
+}
+
+.leaderboard-row:last-child {
+  border-bottom: none;
+}
+
+.rank {
+  font-weight: 600;
+}
+
+.rank-1 {
+  color: #fbbf24;
+}
+
+.rank-2 {
+  color: #c0c0c0;
+}
+
+.rank-3 {
+  color: #cd7f32;
+}
+
+.username {
+  font-weight: 500;
+}
+
+.time {
+  font-family: monospace;
+  color: #22c55e;
+}
+
+.empty-leaderboard {
+  text-align: center;
+  padding: 3rem;
+  color: #888;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+}
+
+/* Header Buttons */
+.header-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.header-btn {
+  padding: 0.5rem 1rem;
+  background: #555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.header-btn:hover {
+  background: #666;
+}
+
+.header-btn.primary {
+  background: #22c55e;
+}
+
+.header-btn.primary:hover {
+  background: #16a34a;
+}
+
+.user-info {
+  color: #aaa;
+  font-size: 0.9rem;
 }
 
 #root {

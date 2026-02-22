@@ -1,7 +1,6 @@
-import { characters } from './data'
 import PropTypes from 'prop-types'
 
-export default function CharacterDialog({ isOpen, onSelect, onClose }) {
+export default function CharacterDialog({ isOpen, onSelect, onClose, characters }) {
   if (!isOpen) return null
 
   return (
@@ -29,5 +28,6 @@ export default function CharacterDialog({ isOpen, onSelect, onClose }) {
 CharacterDialog.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onSelect: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
+  characters: PropTypes.array.isRequired
 }
