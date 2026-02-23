@@ -34,6 +34,12 @@ export function AuthProvider({ children }) {
     return data;
   };
 
+  const handleOAuthCallback = async (token) => {
+    tokenService.setToken(token);
+    const userData = await authAPI.getProfile();
+    setUser(userData);
+  };
+
   const signup = async (username, email, password) => {
     return authAPI.signup(username, email, password);
   };
@@ -50,6 +56,7 @@ export function AuthProvider({ children }) {
     login,
     signup,
     logout,
+    handleOAuthCallback,
   };
 
   return (

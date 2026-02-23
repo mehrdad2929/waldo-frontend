@@ -19,7 +19,16 @@ function AppContent() {
     const [scoreSubmitted, setScoreSubmitted] = useState(false)
     const imageRef = useRef(null)
     const tolerance = 5
-    const { user, isAuthenticated, logout, loading } = useAuth()
+    const { user, isAuthenticated, logout, loading, handleOAuthCallback } = useAuth()
+
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search)
+        const token = urlParams.get('token')
+        if (token) {
+            handleOAuthCallback(token)
+            window.history.replaceState({}, document.title, window.location.pathname)
+        }
+    }, [handleOAuthCallback])
 
     useEffect(() => {
         let interval
@@ -130,7 +139,17 @@ function AppContent() {
                         <div className="header-buttons">
                             {isAuthenticated ? (
                                 <>
-                                    <span className="user-info">Welcome, {user?.username}</span>
+                                    <div className="user-info">
+                                        {user?.picture && typeof user.picture === 'string' && user.picture.startsWith('http') && (
+                                            <img 
+                                                src={user.picture} 
+                                                alt="Profile" 
+                                                className="user-avatar"
+                                                onError={(e) => e.target.style.display = 'none'}
+                                            />
+                                        )}
+                                        <span>Welcome, {user?.name || user?.username}</span>
+                                    </div>
                                     <button className="header-btn" onClick={showLeaderboard}>
                                         Leaderboard
                                     </button>

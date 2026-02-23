@@ -429,6 +429,67 @@ body {
   color: #aaa;
 }
 
+.oauth-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: #888;
+}
+
+.oauth-divider::before,
+.oauth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #555;
+}
+
+.oauth-divider span {
+  padding: 0 1rem;
+  font-size: 0.9rem;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: white;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: background 0.2s;
+}
+
+.google-btn:hover {
+  background: #f0f0f0;
+}
+
+.github-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #24292e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  transition: background 0.2s;
+}
+
+.github-btn:hover {
+  background: #2f363d;
+}
+
 .link-btn {
   background: none;
   border: none;
@@ -593,6 +654,16 @@ body {
 .user-info {
   color: #aaa;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 #root {
