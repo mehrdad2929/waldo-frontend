@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useAuth } from '../context/AuthContext';
 
-const BACKEND_URL = 'waldo-backend-pr9yfys8d-mehrdad2929s-projects.vercel.app';
+const BACKEND_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 export default function LoginPage({ onBack, onSwitchToSignup }) {
     const [username, setUsername] = useState('');
